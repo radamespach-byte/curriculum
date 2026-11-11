@@ -1,1 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>CV - Ángel Radamés Pacheco Zúniga</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  a { color: #f2994a; font-style: normal; text-decoration: none;
 
+  }
+    a:hover { color: #ffffff; font-style: normal; text-decoration: none;
+
+  }
+
+  body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    background: #e9ecef;
+    color: #2d3436;
+    font-size: 9.6pt;
+    line-height: 1.5;
+  }
+  .page {
+    width: 210mm;
+    height: 297mm;
+    margin: 20px auto;
+    background: #fff;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0,0,0,.15);
+  }
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; }
+  }
+
+  /* ---------- BARRA LATERAL ---------- */
+  .sidebar {
+    width: 72mm;
+    background: #1e2a38;
+    color: #e8ecf1;
+    padding: 14mm 8mm 10mm 9mm;
+  }
+  .monogram img {
+    width: 30mm; height: 30mm;
+    border-radius: 50%;
+    border: 3px solid #f2994a;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 9mm;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 26pt;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  .side-section { margin-bottom: 7.5mm; }
+  .side-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10pt;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #f2994a;
+    border-bottom: 1px solid rgba(255,255,255,.18);
+    padding-bottom: 1.5mm;
+    margin-bottom: 3.5mm;
+  }
+  .contact-item {
+    display: flex;
+    gap: 3mm;
+    margin-bottom: 3mm;
+    font-size: 8.6pt;
+    align-items: flex-start;
+    word-break: break-word;
+  }
+  .icon {
+    flex-shrink: 0;
+    width: 5.5mm; height: 5.5mm;
+    background: #f2994a;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: .3mm;
+  }
+  .icon svg { width: 3mm; height: 3mm; fill: #1e2a38; }
+
+  .skill { margin-bottom: 2.8mm; }
+  .skill-name {
+    display: flex; justify-content: space-between;
+    font-size: 8.6pt;
+    margin-bottom: .8mm;
+  }
+  .skill-name span:last-child { color: #aab4c0; font-size: 7.6pt; }
+  .bar { height: 1.6mm; background: rgba(255,255,255,.15); border-radius: 1mm; }
+  .bar div { height: 100%; background: #f2994a; border-radius: 1mm; }
+
+  .lang {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 8.8pt; margin-bottom: 2.5mm;
+  }
+  .dots { display: flex; gap: 1.2mm; }
+  .dots i {
+    width: 2.4mm; height: 2.4mm; border-radius: 50%;
+    background: rgba(255,255,255,.2);
+  }
+  .dots i.on { background: #f2994a; }
+
+  .edu-item { margin-bottom: 3mm; font-size: 8.6pt; }
+  .edu-item strong {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-size: 8.8pt;
+  }
+  .edu-item span { color: #aab4c0; }
+
+  /* ---------- CONTENIDO PRINCIPAL ---------- */
+  .main {
+    flex: 1;
+    padding: 14mm 12mm 10mm 11mm;
+  }
+  .name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25pt;
+    font-weight: 800;
+    line-height: 1.05;
+    color: #1e2a38;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+  }
+  .name span { color: #f2994a; }
+  .role {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: #5a6878;
+    margin-top: 2.5mm;
+    padding-bottom: 5mm;
+    border-bottom: 3px solid #f2994a;
+    display: inline-block;
+  }
+  .section { margin-top: 7mm; }
+  .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11.5pt;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1e2a38;
+    margin-bottom: 3.5mm;
+    display: flex; align-items: center; gap: 3mm;
+  }
+  .section-title::after {
+    content: ""; flex: 1; height: 1px; background: #dfe4ea;
+  }
+  .profile { text-align: justify; color: #444; }
+
+  .timeline { border-left: 2px solid #dfe4ea; margin-left: 1.5mm; }
+  .job {
+    position: relative;
+    padding-left: 6mm;
+    margin-bottom: 5.5mm;
+  }
+  .job:last-child { margin-bottom: 0; }
+  .job::before {
+    content: "";
+    position: absolute;
+    left: -2.1mm; top: 1.2mm;
+    width: 3.4mm; height: 3.4mm;
+    border-radius: 50%;
+    background: #fff;
+    border: 2.5px solid #f2994a;
+  }
+  .job-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 3mm;
+  }
+  .job-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 10.2pt;
+    color: #1e2a38;
+  }
+  .job-date {
+    flex-shrink: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8pt;
+    font-weight: 600;
+    color: #fff;
+    background: #1e2a38;
+    padding: .5mm 2.5mm;
+    border-radius: 3mm;
+  }
+  .company {
+    font-weight: 600;
+    color: #f2994a;
+    font-size: 9pt;
+    margin: .5mm 0 1.5mm;
+  }
+  .job ul { padding-left: 4mm; }
+  .job li { margin-bottom: 1mm; color: #444; }
+  .job li::marker { color: #f2994a; }
+
+  .highlights {
+    display: flex; gap: 3mm; margin-top: 6mm;
+  }
+  .hl {
+    flex: 1;
+    background: #f5f7fa;
+    border-top: 3px solid #f2994a;
+    padding: 3mm 2mm;
+    text-align: center;
+  }
+  .hl strong {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15pt;
+    color: #1e2a38;
+    line-height: 1.1;
+  }
+  .hl span { font-size: 7.8pt; color: #5a6878; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ===== BARRA LATERAL ===== -->
+  <aside class="sidebar">
+    <div class="monogram"><img src="foto_formal_mia.jpg" alt="Angel Pacheco"></div>
+
+    <div class="side-section">
+      <div class="side-title">Contacto</div>
+      <div class="contact-item">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></svg></div>
+        <div>(504) 8890-4120</div>
+      </div>
+      <div class="contact-item">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5z"/></svg></div>
+        <div>radamespach@gmail.com</div>
+      </div>
+      <div class="contact-item">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1114.5 9 2.5 2.5 0 0112 11.5z"/></svg></div>
+        <div>Col. Lomas de las Cascadas IV etapa, Calle Principal, 1.er pasaje</div>
+      </div>
+      <div class="contact-item">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm6.9 6h-2.9a15.7 15.7 0 00-1.4-3.6A8 8 0 0118.9 8zM12 4a14 14 0 011.9 4h-3.8A14 14 0 0112 4zM4.3 14a8.2 8.2 0 010-4h3.4a16.5 16.5 0 000 4zm.8 2h2.9a15.7 15.7 0 001.4 3.6A8 8 0 015.1 16zM8 8H5.1a8 8 0 014.3-3.6A15.7 15.7 0 008 8zm4 12a14 14 0 01-1.9-4h3.8A14 14 0 0112 20zm2.3-6H9.7a14.7 14.7 0 010-4h4.6a14.7 14.7 0 010 4zm.3 5.6A15.7 15.7 0 0016 16h2.9a8 8 0 01-4.3 3.6zm1.7-5.6a16.5 16.5 0 000-4h3.4a8.2 8.2 0 010 4z"/></svg></div>
+        <div><a href="https://www.facebook.com/ProDesignstudio1" target="_blank">Muestras de trabajo</a></div>
+      </div>
+    </div>
+
+    <div class="side-section">
+      <div class="side-title">Habilidades</div>
+      <div class="skill"><div class="skill-name"><span>Adobe InDesign</span><span>Experto</span></div><div class="bar"><div style="width:95%"></div></div></div>
+      <div class="skill"><div class="skill-name"><span>Adobe Illustrator</span><span>Experto</span></div><div class="bar"><div style="width:95%"></div></div></div>
+      <div class="skill"><div class="skill-name"><span>Adobe Photoshop</span><span>Experto</span></div><div class="bar"><div style="width:95%"></div></div></div>
+      <div class="skill"><div class="skill-name"><span>Adobe Acrobat</span><span>Experto</span></div><div class="bar"><div style="width:95%"></div></div></div>
+      <div class="skill"><div class="skill-name"><span>Artes finales / Preprensa</span><span>Experto</span></div><div class="bar"><div style="width:95%"></div></div></div>
+      <div class="skill"><div class="skill-name"><span>WordPress</span><span>Intermedio</span></div><div class="bar"><div style="width:60%"></div></div></div>
+      <div class="skill"><div class="skill-name"><span>HTML / CSS</span><span>Básico-Intermedio</span></div><div class="bar"><div style="width:50%"></div></div></div>
+      <div class="skill"><div class="skill-name"><span>Adobe After Effects</span><span>Básico</span></div><div class="bar"><div style="width:30%"></div></div></div>
+    </div>
+
+    <div class="side-section">
+      <div class="side-title">Idiomas</div>
+      <div class="lang"><span>Español <small style="color:#aab4c0">(Nativo)</small></span><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+      <div class="lang"><span>Inglés <small style="color:#aab4c0">(Básico)</small></span><div class="dots"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div></div>
+    </div>
+
+    <div class="side-section">
+      <div class="side-title">Educación</div>
+      <div class="edu-item"><strong>Bachillerato</strong><span>Instituto Millenium de Cerro Verde</span></div>
+      <div class="edu-item"><strong>Ciclo Común</strong><span>Instituto 1.º de Mayo</span></div>
+      <div class="edu-item"><strong>Educación Primaria</strong><span>Escuela Francisco Morazán y Escuela Dionisio de Herrera</span></div>
+    </div>
+  </aside>
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main class="main">
+    <h1 class="name">Ángel Radamés<br><span>Pacheco Zúniga</span></h1>
+    <div class="role">Diseñador Gráfico &nbsp;|&nbsp; Especialista en Preprensa y Diseño Editorial</div>
+
+    <section class="section">
+      <h2 class="section-title">Perfil Profesional</h2>
+      <p class="profile">
+        Diseñador Gráfico con más de <strong>25 años de experiencia</strong> en la creación de contenido visual,
+        diseño editorial y gestión de publicaciones impresas y digitales. Profesional autodidacta, orientado
+        a la innovación y a la resolución de retos. Amplio dominio de <strong>Adobe Creative Suite</strong>, con
+        experiencia comprobada liderando áreas de arte y preprensa, así como gestionando la imagen
+        institucional y los sitios web corporativos.
+      </p>
+    </section>
+
+    <div class="highlights">
+      <div class="hl"><strong>30+</strong><span>Años en la industria gráfica</span></div>
+      <div class="hl"><strong>25</strong><span>Años en diseño editorial institucional</span></div>
+      <div class="hl"><strong>6</strong><span>Años liderando arte y preprensa</span></div>
+    </div>
+
+    <section class="section">
+      <h2 class="section-title">Experiencia Laboral</h2>
+      <div class="timeline">
+
+        <div class="job">
+          <div class="job-head">
+            <div class="job-title">Asistente II – Área de Publicaciones</div>
+            <div class="job-date">1998 – 2023</div>
+          </div>
+          <div class="company">FHIA – Fundación Hondureña de Investigación Agrícola</div>
+          <ul>
+            <li>Encargado integral del diseño, diagramación y producción de todas las publicaciones impresas y digitales de la institución.</li>
+            <li>Diseñé y actualicé constantemente el sitio web oficial de la fundación, asegurando la coherencia de la marca y la disponibilidad de la información.</li>
+            <li>Gestioné proyectos de comunicación visual de principio a fin durante 25 años, garantizando altos estándares de calidad en cada entrega.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="job-title">Jefe de Arte y Diseño – Área de Preprensa</div>
+            <div class="job-date">1992 – 1998</div>
+          </div>
+          <div class="company">Multiprint (antes Eti-Print)</div>
+          <ul>
+            <li>Dirigí el departamento de arte y preprensa de la imprenta, supervisando la correcta preparación de archivos para su impresión final.</li>
+            <li>Coordiné la creación de artes gráficas y materiales visuales para clientes corporativos, asegurando el cumplimiento de los tiempos de entrega.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="job-title">Dibujante y Ayudante de Diseño</div>
+            <div class="job-date">1992</div>
+          </div>
+          <div class="company">Diario Tiempo</div>
+          <ul>
+            <li>Colaboré en la creación de ilustraciones y apoyo en el diseño de páginas para la publicación del diario.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+</div>
+</body>
+</html>
